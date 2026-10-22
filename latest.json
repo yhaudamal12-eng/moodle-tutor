@@ -1,5 +1,5 @@
 {
-  "version": "0.9.3",
-  "file": "releases/moodle-tutor-0.9.3.zip",
-  "notes": "כללי עברית מחמירים: אף פסקה לא מתחילה בסמל"
+  "version": "0.9.4",
+  "file": "releases/moodle-tutor-0.9.4.zip",
+  "notes": "שינויים שכתבת בתוך הוראות התוסף כבר לא נמחקים בעדכון"
 }
