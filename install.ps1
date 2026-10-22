@@ -10,7 +10,10 @@ Invoke-WebRequest -Uri "$repo/releases/moodle-tutor-latest.zip" -OutFile $zip -U
 Expand-Archive -Path $zip -DestinationPath $docs -Force
 Remove-Item $zip -ErrorAction SilentlyContinue
 $ext = Join-Path $docs 'moodle-tutor'
-& (Join-Path (Join-Path $ext 'installer') 'register.ps1') -ExtensionDir $ext
+# Run the registration as a script block, not as a .ps1 file: Windows blocks running script files by
+# default ("running scripts is disabled on this system"), but not code that is already in this session.
+$reg = [ScriptBlock]::Create((Get-Content -Raw -Encoding UTF8 (Join-Path (Join-Path $ext 'installer') 'register.ps1')))
+& $reg -ExtensionDir $ext
 Write-Host ''
 Write-Host "Installed in: $ext"
 Write-Host 'Next: open chrome://extensions, turn on Developer mode, click "Load unpacked" and choose that folder.'

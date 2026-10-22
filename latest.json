@@ -1,5 +1,5 @@
 {
-  "version": "0.9.7",
-  "file": "releases/moodle-tutor-0.9.7.zip",
-  "notes": "עדכון בלחיצה אחת"
+  "version": "0.9.8",
+  "file": "releases/moodle-tutor-0.9.8.zip",
+  "notes": "תיקון התקנה: חסימת סקריפטים ושמות תיקיות בעברית"
 }
